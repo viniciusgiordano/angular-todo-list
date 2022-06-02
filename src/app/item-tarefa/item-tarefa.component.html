@@ -1,0 +1,16 @@
+<div class="tarefa-item completed" [class.completed]="tarefa.feita">
+  <div class="check-box">
+    <i class="material-icons">check</i>
+  </div>
+  <div class="tarefa-text">
+    {{ tarefa.texto }}
+  </div>
+  <div class="tarefa-controls-box">
+    <div class="tarefa-control-button">
+      <i class="material-icons">edit</i>
+    </div>
+    <div class="tarefa-control-button is-danger">
+      <i class="material-icons">delete</i>
+    </div>
+  </div>
+</div>

@@ -1,56 +1,49 @@
 <section class="heading-section">
-    <h1 class="title is-1 has-text-centered">
-        Todos
-    </h1>
+  <h1 class="title is-1 has-text-centered">ToDo List</h1>
 </section>
 
 <div class="container">
-    <div class="add-todo-box">
-        <form>
-            <h2 class="title is-5">New Todo</h2>
-            <div class="field is-grouped">
-                <p class="control is-expanded">
-                  <input class="input" type="text" placeholder="Add a new Todo...">
-                </p>
-                <p class="control">
-                  <button class="button alt-gradient-button">
-                    <i class="material-icons">add</i>
-                    Add
-                  </button>
-                </p>
-              </div>
-        </form>
-    </div>
+  <div class="add-tarefa-box">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+      <h2 class="title is-5">Nova Tarefa</h2>
+      <div class="field is-grouped">
+        <p class="control is-expanded">
+          <input
+            required
+            ngModel
+            #campoTarefa="ngModel"
+            name="texto"
+            minlength="2"
+            class="input"
+            type="text"
+            placeholder="Adicione uma nova Tarefa..."
+            ngModel
+            name="texto"
+          />
+        </p>
+        <p class="control">
+          <button class="button alt-gradient-button">
+            <i class="material-icons">add</i>
+            Adicionar
+          </button>
+        </p>
+      </div>
+      <div *ngIf="campoTarefa.invalid && errosValidacao">
+        <p class="help is-danger" *ngIf="campoTarefa.errors!['required']">
+          Por favor adicione uma tarefa.
+        </p>
+        <p class="help is-danger" *ngIf="campoTarefa.errors!['minlength']">
+          A tarefa precisa ter no mínimo 2 caracteres.
+        </p>
+      </div>
+    </form>
+  </div>
 </div>
 
 <section class="section">
-    <div class="container">
-        <div class="todos-list">
-            <div class="todo-item completed">
-                <div class="check-box">
-                    <i class="material-icons">check</i>
-                </div>
-                <div class="todo-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ipsa veritatis sint iure! Libero, autem quaerat accusamus enim dolore, rerum hic non, delectus numquam incidunt assumenda facilis dolorem qui est!
-                </div>
-            </div>
-            <div class="todo-item">
-                <div class="check-box">
-                    <i class="material-icons">check</i>
-                </div>
-                <div class="todo-text">
-                    Just one line                
-                </div>
-
-                <div class="todo-controls-box">
-                    <div class="todo-control-button">
-                        <i class="material-icons">edit</i>
-                    </div>
-                    <div class="todo-control-button">
-                        <i class="material-icons">delete</i>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="tarefas-list">
+      <app-item-tarefa *ngFor="let tarefa of tarefas" [tarefa]="tarefa"></app-item-tarefa>
     </div>
+  </div>
 </section>
