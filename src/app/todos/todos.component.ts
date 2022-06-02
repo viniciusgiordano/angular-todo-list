@@ -15,7 +15,10 @@ export class TodosComponent implements OnInit {
   tarefas: Tarefa[]
   errosValidacao: boolean
 
-  constructor(private dataService: DataService, private dialog: MatDialog) { }
+  constructor(
+    private dataService: DataService, 
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.tarefas=this.dataService.getAllTarefas()
@@ -44,7 +47,6 @@ export class TodosComponent implements OnInit {
         this.dataService.updateTarefa(index, result)
       }
     })
-    // this.dataService.updateTarefa()
   }
 
   removeTarefa(tarefa: Tarefa) {

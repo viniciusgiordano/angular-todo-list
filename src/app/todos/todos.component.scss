@@ -12,8 +12,13 @@
     }
 }
 
+.section{
+    background: lightgray;
+}
+
 .container{
     max-width: 800px;
+    background: lightgray;
 }
 
 .add-tarefa-box{
@@ -21,7 +26,7 @@
     border-radius: 5px;
     margin-top: -68px;
 
-    background-color: white;
+    background-color: lightgray;
 
     box-shadow: 0 4px 12px rgba(black,0.2);
 }
