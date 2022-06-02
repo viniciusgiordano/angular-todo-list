@@ -43,7 +43,12 @@
 <section class="section">
   <div class="container">
     <div class="tarefas-list">
-      <app-item-tarefa *ngFor="let tarefa of tarefas" [tarefa]="tarefa"></app-item-tarefa>
+      <app-item-tarefa
+        *ngFor="let tarefa of tarefas"
+        [tarefa]="tarefa"
+        (editClicked)="editTarefa(tarefa)"
+        (deleteClicked)="removeTarefa(tarefa)"
+      ></app-item-tarefa>
     </div>
   </div>
 </section>

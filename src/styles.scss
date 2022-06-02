@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '../node_modules/bulma/bulma.sass';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0;}
 
 .alt-gradient-button{
     background: linear-gradient(270deg, rgba(9,121,48,1) 16%, rgba(9,121,48,1) 43%, rgba(0,255,149,1) 100%);
@@ -31,3 +35,4 @@
         margin-left: -3px;
     }
 }
+

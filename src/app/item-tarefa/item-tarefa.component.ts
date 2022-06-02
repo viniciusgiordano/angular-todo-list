@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Tarefa } from '../services/tarefa.model';
 
 
@@ -9,10 +9,20 @@ import { Tarefa } from '../services/tarefa.model';
 })
 export class ItemTarefaComponent implements OnInit {
   @Input() tarefa: Tarefa
+  @Output() editClicked: EventEmitter<void> = new EventEmitter()
+  @Output() deleteClicked: EventEmitter<void> = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onEditClick(){
+    this.editClicked.emit()
+  }
+
+  onDeleteClicked() {
+    this.deleteClicked.emit()
   }
 
 }

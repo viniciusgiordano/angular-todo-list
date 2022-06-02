@@ -6,11 +6,11 @@
     {{ tarefa.texto }}
   </div>
   <div class="tarefa-controls-box">
-    <div class="tarefa-control-button">
+    <div class="tarefa-control-button" (click)="onEditClick()">
       <i class="material-icons">edit</i>
     </div>
-    <div class="tarefa-control-button is-danger">
-      <i class="material-icons">delete</i>
+    <div class="tarefa-control-button is-danger" (click)="onDeleteClicked()">
+      <i class="material-icons" >delete</i>
     </div>
   </div>
 </div>
